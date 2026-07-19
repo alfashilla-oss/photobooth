@@ -10,6 +10,8 @@ let stream = null;
 
 let photos = [];
 
+let finalStrip = "";
+
 startCamera.addEventListener("click", async () => {
 
     try {
