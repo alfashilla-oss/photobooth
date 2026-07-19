@@ -50,6 +50,34 @@ function loadImage(src) {
     });
 }
 
+async function createPhotoStrip() {
+
+    const stripCanvas = document.createElement("canvas");
+    const stripCtx = stripCanvas.getContext("2d");
+
+    const width = 320;
+    const heightPerPhoto = 240;
+
+    stripCanvas.width = width;
+    stripCanvas.height = heightPerPhoto * photos.length;
+
+    for (let i = 0; i < photos.length; i++) {
+
+        const img = await loadImage(photos[i]);
+
+        stripCtx.drawImage(
+            img,
+            0,
+            i * heightPerPhoto,
+            width,
+            heightPerPhoto
+        );
+    }
+
+    preview.src = stripCanvas.toDataURL("image/png");
+    preview.style.display = "block";
+}
+
 takePhoto.addEventListener("click", async () => {
 
     photos = [];
