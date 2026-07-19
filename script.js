@@ -1,8 +1,33 @@
-console.log("Photobooth siap!");
-const video=document.getElementById("video");
+const video = document.getElementById("video");
+const canvas = document.getElementById("canvas");
 
-const canvas=document.getElementById("canvas");
+const startCamera = document.getElementById("startCamera");
+const takePhoto = document.getElementById("takePhoto");
 
-const startCamera=document.getElementById("startCamera");
+let stream = null;
 
-const takePhoto=document.getElementById("takePhoto");
+startCamera.addEventListener("click", async () => {
+
+    try {
+
+        stream = await navigator.mediaDevices.getUserMedia({
+
+            video: {
+                facingMode: "user"
+            },
+
+            audio: false
+
+        });
+
+        video.srcObject = stream;
+
+    } catch (err) {
+
+        alert("Kamera tidak dapat dibuka.");
+
+        console.log(err);
+
+    }
+
+});
