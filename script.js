@@ -2,8 +2,6 @@ const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 
 const startCamera = document.getElementById("startCamera");
-
-const countdown = document.getElementById("countdown");
 const takePhoto = document.getElementById("takePhoto");
 
 let stream = null;
@@ -35,6 +33,8 @@ startCamera.addEventListener("click", async () => {
 });
 
 const preview = document.getElementById("preview");
+
+const countdown = document.getElementById("countdown");
 
 function delay(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
