@@ -42,6 +42,14 @@ function delay(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function loadImage(src) {
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.src = src;
+    });
+}
+
 takePhoto.addEventListener("click", async () => {
 
     photos = [];
