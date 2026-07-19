@@ -40,25 +40,27 @@ function delay(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-takePhoto.addEventListener("click", () => {
+takePhoto.addEventListener("click", async () => {
 
-    try {
+    for(let i = 3; i >= 1; i--){
 
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
+        countdown.textContent = i;
 
-        const ctx = canvas.getContext("2d");
-
-        ctx.drawImage(video, 0, 0);
-
-        alert("Foto berhasil digambar ke canvas");
-
-    } catch (err) {
-
-        alert(err.message);
-        console.log(err);
+        await delay(1000);
 
     }
 
-});
+    countdown.textContent = "";
 
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    const ctx = canvas.getContext("2d");
+
+    ctx.drawImage(video, 0, 0);
+
+    preview.src = canvas.toDataURL("image/png");
+
+    preview.style.display = "block";
+
+});
