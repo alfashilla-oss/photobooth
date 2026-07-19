@@ -36,14 +36,23 @@ const preview = document.getElementById("preview");
 
 takePhoto.addEventListener("click", () => {
 
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
+    try {
 
-    const ctx = canvas.getContext("2d");
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
 
-    ctx.drawImage(video, 0, 0);
+        const ctx = canvas.getContext("2d");
 
-    alert("Foto berhasil digambar ke canvas");
+        ctx.drawImage(video, 0, 0);
+
+        alert("Foto berhasil digambar ke canvas");
+
+    } catch (err) {
+
+        alert(err.message);
+        console.log(err);
+
+    }
 
 });
 
