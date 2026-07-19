@@ -36,17 +36,14 @@ const preview = document.getElementById("preview");
 
 takePhoto.addEventListener("click", () => {
 
-    alert("Lebar video: " + video.videoWidth);
-
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
 
     const ctx = canvas.getContext("2d");
 
-    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(video, 0, 0);
 
-    preview.src = canvas.toDataURL("image/png");
-    preview.style.display = "block";
+    alert("Foto berhasil digambar ke canvas");
 
 });
 
