@@ -36,6 +36,8 @@ const preview = document.getElementById("preview");
 
 takePhoto.addEventListener("click", () => {
 
+    alert("Lebar video: " + video.videoWidth);
+
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
 
