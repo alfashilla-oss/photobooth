@@ -52,35 +52,38 @@ function loadImage(src) {
 
 async function createPhotoStrip() {
 
-    alert("Photo strip selesai dibuat");
-    
     const stripCanvas = document.createElement("canvas");
-    const stripCtx = stripCanvas.getContext("2d");
+    const ctx = stripCanvas.getContext("2d");
 
-    const width = 320;
-    const heightPerPhoto = 240;
+    const photoWidth = 320;
+    const photoHeight = 240;
+    const padding = 20;
 
-    stripCanvas.width = width;
-    stripCanvas.height = heightPerPhoto * photos.length;
+    stripCanvas.width = photoWidth + padding * 2;
+    stripCanvas.height = (photoHeight * photos.length) + (padding * (photos.length + 1));
+
+    // Background putih
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, stripCanvas.width, stripCanvas.height);
 
     for (let i = 0; i < photos.length; i++) {
 
         const img = await loadImage(photos[i]);
 
-        stripCtx.drawImage(
+        const y = padding + (photoHeight + padding) * i;
+
+        ctx.drawImage(
             img,
-            0,
-            i * heightPerPhoto,
-            width,
-            heightPerPhoto
+            padding,
+            y,
+            photoWidth,
+            photoHeight
         );
     }
 
-    alert("Photo strip selesai dibuat");
     preview.src = stripCanvas.toDataURL("image/png");
     preview.style.display = "block";
 }
-
 takePhoto.addEventListener("click", async () => {
 
     photos = [];
