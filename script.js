@@ -31,3 +31,19 @@ startCamera.addEventListener("click", async () => {
     }
 
 });
+
+const preview = document.getElementById("preview");
+
+takePhoto.addEventListener("click", () => {
+
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    const ctx = canvas.getContext("2d");
+
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    preview.src = canvas.toDataURL("image/png");
+    preview.style.display = "block";
+
+});
