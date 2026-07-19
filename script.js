@@ -109,7 +109,6 @@ takePhoto.addEventListener("click", async () => {
 
     countdown.textContent = "Selesai";
 
-    preview.src = photos[0];
-    preview.style.display = "block";
+    await createPhotoStrip();
 
 });
