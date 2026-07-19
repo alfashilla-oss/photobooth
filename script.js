@@ -34,6 +34,12 @@ startCamera.addEventListener("click", async () => {
 
 const preview = document.getElementById("preview");
 
+const countdown = document.getElementById("countdown");
+
+function delay(ms){
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 takePhoto.addEventListener("click", () => {
 
     try {
