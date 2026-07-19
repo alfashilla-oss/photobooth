@@ -52,6 +52,8 @@ function loadImage(src) {
 
 async function createPhotoStrip() {
 
+    alert("Photo strip selesai dibuat");
+    
     const stripCanvas = document.createElement("canvas");
     const stripCtx = stripCanvas.getContext("2d");
 
@@ -74,6 +76,7 @@ async function createPhotoStrip() {
         );
     }
 
+    alert("Photo strip selesai dibuat");
     preview.src = stripCanvas.toDataURL("image/png");
     preview.style.display = "block";
 }
