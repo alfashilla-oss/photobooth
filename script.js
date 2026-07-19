@@ -47,3 +47,7 @@ takePhoto.addEventListener("click", () => {
     preview.style.display = "block";
 
 });
+
+takePhoto.addEventListener("click", () => {
+    alert("Tombol Ambil Foto berhasil ditekan");
+});
