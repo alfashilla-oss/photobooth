@@ -6,6 +6,8 @@ const takePhoto = document.getElementById("takePhoto");
 
 let stream = null;
 
+let photos = [];
+
 startCamera.addEventListener("click", async () => {
 
     try {
