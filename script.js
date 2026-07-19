@@ -47,6 +47,3 @@ takePhoto.addEventListener("click", () => {
 
 });
 
-takePhoto.addEventListener("click", () => {
-    alert("Tombol Ambil Foto berhasil ditekan");
-});
