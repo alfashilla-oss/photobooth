@@ -4,6 +4,8 @@ const canvas = document.getElementById("canvas");
 const startCamera = document.getElementById("startCamera");
 const takePhoto = document.getElementById("takePhoto");
 
+const downloadPhoto = document.getElementById("downloadPhoto");
+
 let stream = null;
 
 let photos = [];
