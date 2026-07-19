@@ -44,25 +44,36 @@ function delay(ms){
 
 takePhoto.addEventListener("click", async () => {
 
-    for(let i = 3; i >= 1; i--){
+    photos = [];
 
-        countdown.textContent = i;
+    for(let foto = 1; foto <= 4; foto++){
 
-        await delay(1000);
+        for(let i = 3; i >= 1; i--){
+
+            countdown.textContent = i;
+
+            await delay(1000);
+
+        }
+
+        countdown.textContent = "📸";
+
+        await delay(300);
+
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+
+        const ctx = canvas.getContext("2d");
+
+        ctx.drawImage(video,0,0);
+
+        photos.push(canvas.toDataURL("image/png"));
 
     }
 
-    countdown.textContent = "";
+    countdown.textContent = "Selesai";
 
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-
-    const ctx = canvas.getContext("2d");
-
-    ctx.drawImage(video, 0, 0);
-
-    preview.src = canvas.toDataURL("image/png");
-
+    preview.src = photos[0];
     preview.style.display = "block";
 
 });
