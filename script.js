@@ -102,6 +102,14 @@ ctx.drawImage(bg, 0, 0);
         );
     }
 
+const overlay = await loadImage(frame.overlay);
+
+ctx.drawImage(
+    overlay,
+    0,
+    0
+);
+    
     finalStrip = stripCanvas.toDataURL("image/png");
 
 preview.src = finalStrip;
