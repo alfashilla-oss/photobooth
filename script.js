@@ -68,6 +68,12 @@ stripCanvas.width = bg.width;
 stripCanvas.height = bg.height;
 
 ctx.drawImage(bg, 0, 0);
+    const bg = await loadImage(frame.background);
+
+stripCanvas.width = bg.width;
+stripCanvas.height = bg.height;
+
+ctx.drawImage(bg, 0, 0);
     const ctx = stripCanvas.getContext("2d");
 
     const photoWidth = 320;
