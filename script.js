@@ -129,3 +129,15 @@ takePhoto.addEventListener("click", async () => {
     await createPhotoStrip();
 
 });
+
+downloadPhoto.addEventListener("click", () => {
+
+    const link = document.createElement("a");
+
+    link.href = finalStrip;
+
+    link.download = "photobooth.png";
+
+    link.click();
+
+});
