@@ -85,9 +85,16 @@ async function createPhotoStrip() {
         );
     }
 
-    preview.src = stripCanvas.toDataURL("image/png");
-    preview.style.display = "block";
+    finalStrip = stripCanvas.toDataURL("image/png");
+
+preview.src = finalStrip;
+
+preview.style.display = "block";
+
+downloadPhoto.style.display = "inline-block";
+    
 }
+
 takePhoto.addEventListener("click", async () => {
 
     photos = [];
