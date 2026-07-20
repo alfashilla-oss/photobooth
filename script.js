@@ -54,6 +54,11 @@ function loadImage(src) {
     });
 }
 
+const frame = {
+    background: "assets/frames/frame1_bg.png",
+    overlay: "assets/frames/frame1_overlay.png"
+};
+
 async function createPhotoStrip() {
 
     const stripCanvas = document.createElement("canvas");
