@@ -64,14 +64,11 @@ async function createPhotoStrip() {
     const stripCanvas = document.createElement("canvas");
     const ctx = stripCanvas.getContext("2d");
 
-    const photoWidth = 320;
-    const photoHeight = 240;
-    const padding = 20;
+    const CANVAS_WIDTH = 1200;
+const CANVAS_HEIGHT = 1800;
 
-    stripCanvas.width = photoWidth + padding * 2;
-    stripCanvas.height =
-        (photoHeight * photos.length) +
-        (padding * (photos.length + 1));
+stripCanvas.width = CANVAS_WIDTH;
+stripCanvas.height = CANVAS_HEIGHT;
 
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(
