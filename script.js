@@ -1,3 +1,5 @@
+alert("script.js berhasil dimuat");
+
 const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 
@@ -14,24 +16,22 @@ let finalStrip = "";
 
 startCamera.addEventListener("click", async () => {
 
+    alert("Tombol Buka Kamera ditekan");
+
     try {
 
         stream = await navigator.mediaDevices.getUserMedia({
-
             video: {
                 facingMode: "user"
             },
-
             audio: false
-
         });
 
         video.srcObject = stream;
 
     } catch (err) {
 
-        alert("Kamera tidak dapat dibuka.");
-
+        alert(err.message);
         console.log(err);
 
     }
