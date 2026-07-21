@@ -71,11 +71,7 @@ stripCanvas.width = CANVAS_WIDTH;
 stripCanvas.height = CANVAS_HEIGHT;
     
     ctx.fillStyle = "#ffffff";
-ctx.fillRect(
-    0,
-    0,
-    CANVAS_WIDTH,
-    CANVAS_HEIGHT
+ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 );
 
     for(let i = 0; i < photos.length; i++){
