@@ -74,6 +74,58 @@ stripCanvas.height = CANVAS_HEIGHT;
 ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 );
 
+const positions = [
+
+    // kiri atas
+    {
+        x: 40,
+        y: 190,
+        w: 520,
+        h: 390
+    },
+
+    // kiri tengah
+    {
+        x: 40,
+        y: 690,
+        w: 520,
+        h: 390
+    },
+
+    // kiri bawah
+    {
+        x: 40,
+        y: 1190,
+        w: 520,
+        h: 390
+    },
+
+    // kanan atas
+    {
+        x: 640,
+        y: 190,
+        w: 520,
+        h: 390
+    },
+
+    // kanan tengah
+    {
+        x: 640,
+        y: 690,
+        w: 520,
+        h: 390
+    },
+
+    // kanan bawah
+    {
+        x: 640,
+        y: 1190,
+        w: 520,
+        h: 390
+    }
+
+];
+    
     for(let i = 0; i < photos.length; i++){
 
         const img = await loadImage(photos[i]);
