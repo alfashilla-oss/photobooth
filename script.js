@@ -107,42 +107,6 @@ async function createPhotoStrip() {
     downloadPhoto.style.display = "inline-block";
 
 }
-    // Background putih
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, stripCanvas.width, stripCanvas.height);
-
-    for (let i = 0; i < photos.length; i++) {
-
-        const img = await loadImage(photos[i]);
-
-        const y = padding + (photoHeight + padding) * i;
-
-        ctx.drawImage(
-            img,
-            padding,
-            y,
-            photoWidth,
-            photoHeight
-        );
-    }
-
-const overlay = await loadImage(frame.overlay);
-
-ctx.drawImage(
-    overlay,
-    0,
-    0
-);
-    
-    finalStrip = stripCanvas.toDataURL("image/png");
-
-preview.src = finalStrip;
-
-preview.style.display = "block";
-
-downloadPhoto.style.display = "inline-block";
-    
-}
 
 takePhoto.addEventListener("click", async () => {
 
