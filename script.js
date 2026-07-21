@@ -69,7 +69,7 @@ const CANVAS_HEIGHT = 1800;
 
 stripCanvas.width = CANVAS_WIDTH;
 stripCanvas.height = CANVAS_HEIGHT;
-
+    
     ctx.fillStyle = "#ffffff";
 ctx.fillRect(
     0,
