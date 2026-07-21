@@ -130,17 +130,15 @@ const positions = [
 
         const img = await loadImage(photos[i]);
 
-        const y =
-            padding +
-            (photoHeight + padding) * i;
+        const p = positions[i];
 
-        ctx.drawImage(
-            img,
-            padding,
-            y,
-            photoWidth,
-            photoHeight
-        );
+ctx.drawImage(
+    img,
+    p.x,
+    p.y,
+    p.w,
+    p.h
+);
 
     }
 
