@@ -72,7 +72,6 @@ stripCanvas.height = CANVAS_HEIGHT;
     
     ctx.fillStyle = "#ffffff";
 ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-);
 
 const positions = [
 
