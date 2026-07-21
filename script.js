@@ -62,18 +62,6 @@ const frame = {
 async function createPhotoStrip() {
 
     const stripCanvas = document.createElement("canvas");
-    const bg = await loadImage(frame.background);
-
-stripCanvas.width = bg.width;
-stripCanvas.height = bg.height;
-
-ctx.drawImage(bg, 0, 0);
-    const bg = await loadImage(frame.background);
-
-stripCanvas.width = bg.width;
-stripCanvas.height = bg.height;
-
-ctx.drawImage(bg, 0, 0);
     const ctx = stripCanvas.getContext("2d");
 
     const photoWidth = 320;
@@ -81,8 +69,44 @@ ctx.drawImage(bg, 0, 0);
     const padding = 20;
 
     stripCanvas.width = photoWidth + padding * 2;
-    stripCanvas.height = (photoHeight * photos.length) + (padding * (photos.length + 1));
+    stripCanvas.height =
+        (photoHeight * photos.length) +
+        (padding * (photos.length + 1));
 
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(
+        0,
+        0,
+        stripCanvas.width,
+        stripCanvas.height
+    );
+
+    for(let i = 0; i < photos.length; i++){
+
+        const img = await loadImage(photos[i]);
+
+        const y =
+            padding +
+            (photoHeight + padding) * i;
+
+        ctx.drawImage(
+            img,
+            padding,
+            y,
+            photoWidth,
+            photoHeight
+        );
+
+    }
+
+    finalStrip = stripCanvas.toDataURL("image/png");
+
+    preview.src = finalStrip;
+    preview.style.display = "block";
+
+    downloadPhoto.style.display = "inline-block";
+
+}
     // Background putih
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, stripCanvas.width, stripCanvas.height);
